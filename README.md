@@ -1,13 +1,13 @@
 # Simple API crud Demo usando node+sequelize+express+cors
 
-## Overview
+## Descripción
 
 Esta es una simple REST API basada en JSON, contruida con node+express+sequelize
 
 Contiene las tablas relacionadas de Artists, Artworks y Museum locations como informacion de ejemplo.
 
 
-## Setup
+## Configurar (Setup)
 
 Como arrancar la aplicacion despues de descargar el repositorio?
 
@@ -26,8 +26,8 @@ De forma predeterminada, la aplicación busca una base de datos MySQL en localho
 Esto se puede cambiar en el archivo db / config / config.json, editando las credenciales.
 Los valores predeterminados 'root' y 'null' se proporcionan como marcadores de posición para los inicios de sesión, deberá actualizarlos a las credenciales de su base de datos localhost.
 
-### Environments
-WAl conectarse a la base de datos, Sequelize utilizará el entorno de 'desarrollo' de forma predeterminada,
+### Ambientes (Environments)
+Cuanto se conecta a la base de datos, Sequelize utilizará el entorno de 'desarrollo' de forma predeterminada,
 a menos que detecte una variable de entorno que indique lo contrario (como una variable ENV personalizada en una instancia de Heroku).
 Esto se define en db / models / index.js, donde se realiza la conexión a la base de datos:
 
@@ -94,7 +94,9 @@ La respuesta JSON para artistas y ubicaciones devolverá una lista de sus objeto
 
 ## Controladores(Controllers)
 
-Los métodos CRUD para cada modelo se mueven a archivos de controlador separados, almacenados en db / controllers. Luego importamos cada uno de estos al archivo app.js principal y los pasamos como funciones de middleware a las definiciones de ruta.
+Los métodos CRUD para cada modelo se mueven a archivos de controlador separados, almacenados en db / controllers.
+
+Luego importamos cada uno de estos al archivo app.js principal y los pasamos como funciones de middleware a las definiciones de ruta.
 
 Esto nos permite mantener limpio y legible el archivo app.js principal, y agrupa las funciones relevantes para cada modelo en un solo archivo, de modo que se puedan localizar y editar fácilmente.
 
