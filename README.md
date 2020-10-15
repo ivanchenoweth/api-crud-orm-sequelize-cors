@@ -2,9 +2,18 @@
 
 ## Descripción
 
-Esta es una simple REST API basada en JSON, contruida con node+express+sequelize
+Esta es una API REST simple basada en JSON, construida con Node, Express, Sequelize ORM y Cors.
 
-Contiene las tablas relacionadas de Artists, Artworks y Museum locations como informacion de ejemplo.
+Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
+
+## Author
+
+- [Ivan Chenoweth](https://github.com/ivanchenoweth)
+
+
+## License
+
+Este es un proyecto de codigo abierto disponible bajo [MIT License](LICENSE).
 
 
 ## Configurar (Setup)
