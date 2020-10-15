@@ -1,4 +1,4 @@
-# Simple API crud Demo usando node+sequelize+express+cors
+# REST API crud Demo 
 
 ## Descripción
 
@@ -53,6 +53,8 @@ Ejecute migraciones con sequelize-cli. Desde la raíz del proyecto, ejecute:
 	sequelize db:migrate
 
 Sequelize luego creará las tablas en la base de datos.
+
+
 
 ### Alimentando datos de ejemplo (Seeding sample data)
 
