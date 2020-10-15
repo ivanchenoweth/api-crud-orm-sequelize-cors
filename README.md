@@ -75,6 +75,10 @@ Dado que ignoramos node_modules / via Git, necesitamos mover estos archivos a la
 * Nota: si está iniciando un nuevo proyecto desde cero, puede crear este archivo en la raíz del proyecto antes de ejecutar sequelize init.
 De esta manera, Sequelize-cli generará estas carpetas para usted cuando inicie el proyecto *
 
+## Executar la Demo
+
+	node app.js nodemon
+
 ## Routes / Endpoints
 Las siguientes rutas están configuradas y devolverán datos JSON:
 
