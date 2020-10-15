@@ -6,15 +6,13 @@ Esta es una API REST simple basada en JSON, construida con Node, Express, Sequel
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
 
-## Author
+## Autor
 
 - [Ivan Chenoweth](https://github.com/ivanchenoweth)
-
 
 ## License
 
 Este es un proyecto de codigo abierto disponible bajo [MIT License](LICENSE).
-
 
 ## Configurar (Setup)
 
@@ -54,6 +52,8 @@ Ejecute migraciones con sequelize-cli. Desde la raíz del proyecto, ejecute:
 
 Sequelize luego creará las tablas en la base de datos.
 
+
+
 ### Alimentando datos de ejemplo (Seeding sample data)
 
 Hay archivos de seeder en db / seeders para insertar datos de muestra en la base de datos.
@@ -72,6 +72,19 @@ Dado que ignoramos node_modules / via Git, necesitamos mover estos archivos a la
 
 * Nota: si está iniciando un nuevo proyecto desde cero, puede crear este archivo en la raíz del proyecto antes de ejecutar sequelize init.
 De esta manera, Sequelize-cli generará estas carpetas para usted cuando inicie el proyecto *
+
+## Executar la Demo
+
+	node app.js nodemon
+
+## Configurar los puerto 3000
+	
+Editando el archivo ap.js y cambiando el puerto 3000 por cualquier otro
+
+	app.listen(process.env.PORT || 3000, function () {
+      console.log('Express app listening on port 3000');
+    })
+
 
 ## Routes / Endpoints
 Las siguientes rutas están configuradas y devolverán datos JSON:
