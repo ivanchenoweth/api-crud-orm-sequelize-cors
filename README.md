@@ -100,14 +100,12 @@ Esto nos permite mantener limpio y legible el archivo app.js principal, y agrupa
 
 Los controladores utilizan los métodos basados en promesas de Sequelize para leer y escribir en la base de datos y detectar cualquier error.
 
-
 ## Sequelize Models
 Los archivos de modelo son generados por Sequelize-cli. Son archivos que describen una tabla de base de datos en forma de objeto javascript.
 
 
 Mas informacion:
 [Creating a Model](http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-model-and-migration)
-
 
 La carpeta de modelos tiene un archivo index.js, que es donde Sequelize se conecta a la base de datos. Entonces, cuando importamos los modelos a nuestros otros archivos, por ejemplo, el app.js principal, requerimos el directorio / modelos / completo, de modo que este archivo index.js esté incluido, en lugar de solo requerir los archivos de modelo individuales. El archivo index.js también contiene la lógica para crear las asociaciones entre los modelos.
 
@@ -116,30 +114,29 @@ La carpeta de modelos tiene un archivo index.js, que es donde Sequelize se conec
 Mas informacion:
 [Var config not supported on Windows 10](https://github.com/sequelize/sequelize/issues/7418)
 
-## Migrations
-The migration files are generated using the sequelize-cli, to enable us to edit the database, add tables, columns etc.. whenever we create a new model or edit an existing one. This is a form of version control for our database.
+## Migraciones (Migrations)
+Los archivos de migración se generan usando el sequelize-cli, para permitirnos editar la base de datos, agregar tablas, columnas, etc. siempre que creamos un nuevo modelo o editamos uno existente. Esta es una forma de control de versiones para nuestra base de datos.
 
-When we generate a new model file, Sequelize-cli will automatically create the migration file for us. We can also manually generate a migration file, for example the ones to add columns for our foreign keys.
+Cuando generamos un nuevo archivo de modelo, Sequelize-cli creará automáticamente el archivo de migración para nosotros. También podemos generar manualmente un archivo de migración, por ejemplo, aquellos para agregar columnas para nuestras claves externas.
 
-More information here:
-[Migrations](http://docs.sequelizejs.com/manual/tutorial/migrations.html)
-
-
-## Seeders
-The seed files in db/seeders provide a series of javascript objects, with pre-defined information to insert into each database table as sample data rows.
-
-Running the seeders via the command line will insert the data into the tables. This should be done after the database has been properly migrated.
-
-More information here:
-[Creating and running seeders](http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-seed)
+Más información aquí:
+[Migraciones] (http://docs.sequelizejs.com/manual/tutorial/migrations.html)
 
 
-## Associating Models and Using Sequelize Relationships
-We can define associations between our models, which Sequelize will use to add refernces between our database tables. This allows us to easily include all associated records from other tables when querying a record. For example, setting up a parent-child relationship between artists and their associated artworks.
+## Sembradoras (Seeders)
+Los archivos semilla en db / seeders proporcionan una serie de objetos javascript, con información predefinida para insertar en cada tabla de base de datos como filas de datos de muestra.
 
-Sequelize enables us to define this using natural terms. In our example, an artist '**hasMany()**' artworks, and each artwork '**belongsTo()**' an artist. These associations are defined the the model files, and need to be defined in each direction, i.e on both the parent and child model.
+Ejecutar las sembradoras a través de la línea de comando insertará los datos en las tablas. Esto debe hacerse después de que la base de datos se haya migrado correctamente.
 
-Then, in our GET methods in the artist and location controller files, we add an **include** object into the findAll() call, so we can include the associated records from the other table.
+Más información aquí:
+[Creación y ejecución de sembradoras] (http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-seed)
 
-***Note - older tutorials may tell you to define this in the 'classMethods' property on the model object. This will no longer work with Sequelize v4+, you need to define the associations outside of the model object. More information on this here: [Upgrade to V4](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html)***
 
+## Asociación de modelos y uso de relaciones secuelas
+Podemos definir asociaciones entre nuestros modelos, que Sequelize usará para agregar referencias entre nuestras tablas de base de datos. Esto nos permite incluir fácilmente todos los registros asociados de otras tablas al consultar un registro. Por ejemplo, establecer una relación padre-hijo entre los artistas y sus obras de arte asociadas.
+
+Sequelize nos permite definir esto usando términos naturales. En nuestro ejemplo, un artista '** tieneMuchas () **' obras de arte, y cada obra de arte '** pertenece a () **' a un artista. Estas asociaciones se definen en los archivos del modelo y deben definirse en cada dirección, es decir, tanto en el modelo principal como en el secundario.
+
+Luego, en nuestros métodos GET en los archivos del controlador de ubicación y artista, agregamos un objeto ** include ** en la llamada findAll (), para que podamos incluir los registros asociados de la otra tabla.
+
+*** Nota: los tutoriales más antiguos pueden indicarle que defina esto en la propiedad 'classMethods' en el objeto modelo. Esto ya no funcionará con Sequelize v4 +, debe definir las asociaciones fuera del objeto del modelo. Más información sobre esto aquí: [Actualizar a V4] (http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html) ***
