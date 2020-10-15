@@ -1,8 +1,8 @@
-# Simple API crud Demo usando node+sequelize+express+cors
+# Simple REST API CRUD Demo
 
 ## Descripción
 
-Esta es una API REST simple basada en JSON, construida con Node, Express, Sequelize ORM y Cors.
+Esta es una API REST simple basada en JSON, construida con Node, Express, Sequelize ORM con MySQL y Cors.
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
 

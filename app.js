@@ -16,7 +16,6 @@ var app = express();
 
 //Cors
 app.use(cors());
-res.header("Access-Control-Allow-Origin", "*");
 
 //Set up body-parser with JSON
 app.use(bodyParser.json());
@@ -32,14 +31,12 @@ var models = require("./db/models");
 //===========================================
 // Route Handlers
 //===========================================
-
 //Basic home route with documentation. Just for presentation, not functional.
 app.get('/', function(req, res, next){
   res.send('Home Route - nothing to see here yet1 ');
 });
 
 //API endpoints and CRUD routes. The second arguments are referring to functions defined in the individual controller files.
-
 //Artworks CRUD routes.
 app.get('/api/v1/artworks', artworksController.fetchAll);
 app.get('/api/v1/artworks/:id', artworksController.fetchOne);
@@ -66,15 +63,12 @@ app.delete('/api/v1/locations/:id', locationsController.delete);
 //===========================================
 // End of Route Handlers
 //===========================================
-
-
 // Catch 404 errors and forward to error handler. This is called if no match is found in the preceding route functions.
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
 
 // error handler
 // called as the last middleware. Expects an error object as the first argument, which we pass in manually as part of the next() function
