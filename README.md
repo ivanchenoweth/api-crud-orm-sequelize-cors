@@ -183,7 +183,7 @@ echo "web: node app.js" > Procfile
 heroku create
 
 # 6. Crear la base de datos en heroku (addon)
-heroku addons:create heroku-postgresql:hobby-dev
+    heroku addons:create heroku-postgresql:hobby-dev
 
 # 7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
 
@@ -209,4 +209,5 @@ sequelize db:migrate
 # 10. Abrir la url del deploy
 heroku open
 
-    Listo !!, para probar las solicitudes de los APIs atraves de peticiones de una aplicación web o una utileria de solicitudes REST como Postman
+    Listo !!, para probar las solicitudes de los APIs.
+    Esto se puede hacer atraves de peticiones de una aplicación web o una utileria de solicitudes REST como Postman
