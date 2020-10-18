@@ -179,15 +179,16 @@ heroku create
 heroku addons:create heroku-postgresql:hobby-dev
 
 #7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
- Por la constante que arroje el comando del .6
- db/config/config.json
- en el valor de "use_env_variable" : "DATABASE_URL"
-Ej:
-Creating heroku-postgresql:hobby-dev on ⬢ cryptic-temple-48011... free
-Database has been created and is available
- ! This database is empty. If upgrading, you can transfer
- ! data from another database with pg:copy
-Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
+
+     Por la constante que arroje el comando del .6
+     db/config/config.json
+     en el valor de "use_env_variable" : "DATABASE_URL"
+    Ej:
+    Creating heroku-postgresql:hobby-dev on ⬢ cryptic-temple-48011... free
+    Database has been created and is available
+     ! This database is empty. If upgrading, you can transfer
+     ! data from another database with pg:copy
+    Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
 
 # 8. Hacer el deploy
 #si no existe la rama master:
