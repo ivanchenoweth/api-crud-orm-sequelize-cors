@@ -164,3 +164,18 @@ Sequelize nos permite definir esto usando términos naturales. En nuestro ejempl
 Luego, en nuestros métodos GET en los archivos del controlador de ubicación y artista, agregamos un objeto ** include ** en la llamada findAll (), para que podamos incluir los registros asociados de la otra tabla.
 
 *** Nota: los tutoriales más antiguos pueden indicarle que defina esto en la propiedad 'classMethods' en el objeto modelo. Esto ya no funcionará con Sequelize v4 +, debe definir las asociaciones fuera del objeto del modelo. Más información sobre esto aquí: [Actualizar a V4] (http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html) ***
+
+
+# 1. tener una cuneta de heroku
+# 2. instalar heroku cli
+https://devcenter.heroku.com/articles/heroku-cli
+# 3. hacer login
+heroku login
+# 4. Crear archivo Procfile
+echo "web: node app.js" > Procfile
+# 5. Crear el repositorio de heroku
+heroku create
+# 6. Hacer el deploy
+git push heroku
+# 7. Abrir la url del deploy
+heroku open
