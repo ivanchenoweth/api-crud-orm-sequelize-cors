@@ -197,9 +197,9 @@ heroku addons:create heroku-postgresql:hobby-dev
     Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
 
 # 8. Realizar una liberacion (deploy)
-#si no existe la rama master:
-git checkout -b master
-git push heroku master
+    #si no existe la rama master:
+    git checkout -b master
+    git push heroku master
 
 # 9. Ejecutar las migraciones y los semilleros de datos (seeders)
 heroku run bash
