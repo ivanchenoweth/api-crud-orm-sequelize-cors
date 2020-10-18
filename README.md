@@ -10,6 +10,8 @@ Utiliza ubicaciones de artistas, obras de arte y museos como información de mue
 
 [Demo REST API CRUD Demo lista de tabla de artistas - Heroku ](https://cryptic-temple-48011.herokuapp.com/api/v1/artists)
 
+Para otras rutas ver (Routes / Endpoints) mas abajo en este documento
+
 ## Autor
 
 - [Ivan Chenoweth](https://github.com/ivanchenoweth)
