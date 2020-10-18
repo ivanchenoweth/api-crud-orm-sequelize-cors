@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Esta es una API REST simple basada en JSON, construida con Node, Express, Sequelize ORM con MySQL y Cors.
+Esta es una API REST simple basada en JSON, construida con Node, Express, Cors, Sequelize ORM con postgres y hospedable en Heroku.
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
 
