@@ -90,27 +90,27 @@ Editando el archivo ap.js y cambiando el puerto 3000 por cualquier otro
 Las siguientes rutas están configuradas y devolverán datos JSON:
 
 #### Artworks
-+ **GET** all artworks: /api/v1/artworks
-+ **GET** single artwork by id: /api/v1/artworks/{id}
-+ **POST** new artwork: /api/v1/artworks
-+ **PUT** edit a single artwork: /api/v1/artworks/{id}
-+ **DELETE** a single artwork: /api/v1/artworks/{id}
++ **GET** retorna todos los registros de artworks: /api/v1/artworks
++ **GET** retorna un registro de  artwork por id: /api/v1/artworks/{id}
++ **POST** crea un registro de artwork: /api/v1/artworks
++ **PUT** edita un registro de artwork: /api/v1/artworks/{id}
++ **DELETE** borra un registro de artwork: /api/v1/artworks/{id}
 
 
 #### Artists
-+ **GET** all artists: /api/v1/artists
-+ **GET** single artist by id: /api/v1/artists/{id}
-+ **POST** new artist: /api/v1/artists
-+ **PUT** edit a single artist: /api/v1/artists/{id}
-+ **DELETE** a single artist: /api/v1/artists/{id}
++ **GET** retorna todos los registros de artists: /api/v1/artists
++ **GET** retorna un registro de artists por id: /api/v1/artists/{id}
++ **POST** crea un registro de artist: /api/v1/artists
++ **PUT** edita un registro de artist: /api/v1/artists/{id}
++ **DELETE** borra un registro de artist: /api/v1/artists/{id}
 
 
 #### Locations
-+ **GET** all locations: /api/v1/locations
-+ **GET** single location by id: /api/v1/locations/{id}
-+ **POST** new location: /api/v1/locations
-+ **PUT** edit a single location: /api/v1/locations/{id}
-+ **DELETE** a single location: /api/v1/locations/{id}
++ **GET** retorna todos los registros de locations: /api/v1/locations
++ **GET** retorna un registro de location por id: /api/v1/locations/{id}
++ **POST** crea un registro location: /api/v1/locations
++ **PUT** edita un registro de location: /api/v1/locations/{id}
++ **DELETE** borra un registro de location: /api/v1/locations/{id}
 
 La respuesta JSON para artistas y ubicaciones devolverá una lista de sus objetos de arte asociados.
 
@@ -165,8 +165,9 @@ Luego, en nuestros métodos GET en los archivos del controlador de ubicación y 
 
 *** Nota: los tutoriales más antiguos pueden indicarle que defina esto en la propiedad 'classMethods' en el objeto modelo. Esto ya no funcionará con Sequelize v4 +, debe definir las asociaciones fuera del objeto del modelo. Más información sobre esto aquí: [Actualizar a V4] (http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html) ***
 
+# Pasos para realizar una liberacion de hospedaje en Heroku
 
-# 1. tener una Cuenta de heroku
+# 1. Tener una Cuenta de heroku
 https://signup.heroku.com/
 
 # 2. instalar la linea de comandos de heroku (cli)
