@@ -6,6 +6,10 @@ Esta es una API REST simple basada en JSON, construida con Node, Express, Cors, 
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
 
+## Demo on line
+
+[Demo REST API CRUD Demo lista de tabla de artistas - Heroku ](https://cryptic-temple-48011.herokuapp.com/api/v1/artists)
+
 ## Autor
 
 - [Ivan Chenoweth](https://github.com/ivanchenoweth)
