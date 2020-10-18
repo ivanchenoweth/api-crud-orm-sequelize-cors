@@ -179,3 +179,5 @@ heroku create
 git push heroku
 # 7. Abrir la url del deploy
 heroku open
+# 8. Crear la base de datos en heroku
+heroku addons:create heroku-postgresql:hobby-dev
