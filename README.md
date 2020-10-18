@@ -42,6 +42,7 @@ Los valores predeterminados 'root' y 'null' se proporcionan como marcadores de p
 ### Ambientes (Environments)
 Cuanto se conecta a la base de datos, Sequelize utilizará el entorno de 'desarrollo' de forma predeterminada,
 a menos que detecte una variable de entorno que indique lo contrario (como una variable ENV personalizada en una instancia de Heroku).
+
 Esto se define en db / models / index.js, donde se realiza la conexión a la base de datos:
 
 	var env = process.env.NODE_ENV || 'development';
