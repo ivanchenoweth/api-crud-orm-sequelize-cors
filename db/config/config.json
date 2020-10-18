@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "usbw",
+    "username": "postgres",
+    "password": "",
     "database": "art-demo",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
@@ -18,6 +18,6 @@
     "password": null,
     "database": "art-demo",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect" : "postgres"
   }
 }
