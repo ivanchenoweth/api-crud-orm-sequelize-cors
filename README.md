@@ -175,9 +175,30 @@ heroku login
 echo "web: node app.js" > Procfile
 # 5. Crear el repositorio de heroku
 heroku create
-# 6. Hacer el deploy
-git push heroku
-# 7. Abrir la url del deploy
-heroku open
-# 8. Crear la base de datos en heroku
+# 6. Crear la base de datos en heroku
 heroku addons:create heroku-postgresql:hobby-dev
+
+#7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
+ Por la constante que arroje el comando del .6
+ db/config/config.json
+ en el valor de "use_env_variable" : "DATABASE_URL"
+Ej:
+Creating heroku-postgresql:hobby-dev on ⬢ cryptic-temple-48011... free
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pg:copy
+Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
+
+# 8. Hacer el deploy
+#si no existe la rama master:
+git checkout -b master
+git push heroku master
+
+# 9. Ejecutar las migraciones y los seeders
+heroku run bash
+sequelize db:migrate
+
+# 10. Abrir la url del deploy
+heroku open
+
+Listo para probar las solicitudes de los APIs 
