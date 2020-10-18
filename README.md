@@ -166,19 +166,25 @@ Luego, en nuestros métodos GET en los archivos del controlador de ubicación y 
 *** Nota: los tutoriales más antiguos pueden indicarle que defina esto en la propiedad 'classMethods' en el objeto modelo. Esto ya no funcionará con Sequelize v4 +, debe definir las asociaciones fuera del objeto del modelo. Más información sobre esto aquí: [Actualizar a V4] (http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html) ***
 
 
-# 1. tener una cuneta de heroku
-# 2. instalar heroku cli
+# 1. tener una Cuenta de heroku
+https://signup.heroku.com/
+
+# 2. instalar la linea de comandos de heroku (cli)
 https://devcenter.heroku.com/articles/heroku-cli
-# 3. hacer login
+
+# 3. Ingresar al CLI (login)
 heroku login
+
 # 4. Crear archivo Procfile
 echo "web: node app.js" > Procfile
-# 5. Crear el repositorio de heroku
+
+# 5. Crear el repositorio/aplicacion de heroku
 heroku create
-# 6. Crear la base de datos en heroku
+
+# 6. Crear la base de datos en heroku (addon)
 heroku addons:create heroku-postgresql:hobby-dev
 
-#7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
+# 7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
 
      Por la constante que arroje el comando del .6
      db/config/config.json
@@ -190,16 +196,16 @@ heroku addons:create heroku-postgresql:hobby-dev
      ! data from another database with pg:copy
     Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
 
-# 8. Hacer el deploy
+# 8. Realizar una liberacion (deploy)
 #si no existe la rama master:
 git checkout -b master
 git push heroku master
 
-# 9. Ejecutar las migraciones y los seeders
+# 9. Ejecutar las migraciones y los semilleros de datos (seeders)
 heroku run bash
 sequelize db:migrate
 
 # 10. Abrir la url del deploy
 heroku open
 
-Listo para probar las solicitudes de los APIs 
+    Listo !!, para probar las solicitudes de los APIs atraves de peticiones de una aplicación web o una utileria de solicitudes REST como Postman
