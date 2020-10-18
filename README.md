@@ -156,8 +156,10 @@ Más información aquí:
 [Creación y ejecución de sembradoras] (http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-seed)
 
 
-## Asociación de modelos y uso de relaciones secuelas
-Podemos definir asociaciones entre nuestros modelos, que Sequelize usará para agregar referencias entre nuestras tablas de base de datos. Esto nos permite incluir fácilmente todos los registros asociados de otras tablas al consultar un registro. Por ejemplo, establecer una relación padre-hijo entre los artistas y sus obras de arte asociadas.
+## Asociación de modelos y uso de relaciones
+Podemos definir asociaciones entre nuestros modelos, que Sequelize usará para agregar referencias entre nuestras tablas de base de datos. 
+Esto nos permite incluir fácilmente todos los registros asociados de otras tablas al consultar un registro.
+Por ejemplo, establecer una relación padre-hijo entre los artistas y sus obras de arte asociadas.
 
 Sequelize nos permite definir esto usando términos naturales. En nuestro ejemplo, un artista '** tieneMuchas () **' obras de arte, y cada obra de arte '** pertenece a () **' a un artista. Estas asociaciones se definen en los archivos del modelo y deben definirse en cada dirección, es decir, tanto en el modelo principal como en el secundario.
 
