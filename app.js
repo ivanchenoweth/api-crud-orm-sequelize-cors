@@ -11,7 +11,7 @@ var artistsController = require('./db/controllers/artists');
 var locationsController = require('./db/controllers/locations');
 
 //Instantiate app Name and globals
-var appName = "api-crud-orm-sequelize-cors V1.2.1 07-11-2020";
+var appName = "api-crud-orm-sequelize-cors [Staging!] V1.2.1 07-11-2020";
 
 //Instantiate Express
 var app = express();
