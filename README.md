@@ -2,9 +2,15 @@
 
 ## Descripción
 
-Esta es una API REST simple basada en JSON, construida con Node, Express, Sequelize ORM con MySQL y Cors.
+Esta es una API REST simple basada en JSON, construida con Node, Express, Cors, Sequelize ORM con postgres y hospedable en Heroku.
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
+
+## Demo on line
+
+[Demo REST API CRUD Demo lista de tabla de artistas - Heroku ](https://api-crud-orm-sequelize-cors.herokuapp.com/api/v1/artists)
+
+Para otras rutas ver (Routes / Endpoints) mas abajo en este documento
 
 ## Autor
 
@@ -36,6 +42,7 @@ Los valores predeterminados 'root' y 'null' se proporcionan como marcadores de p
 ### Ambientes (Environments)
 Cuanto se conecta a la base de datos, Sequelize utilizará el entorno de 'desarrollo' de forma predeterminada,
 a menos que detecte una variable de entorno que indique lo contrario (como una variable ENV personalizada en una instancia de Heroku).
+
 Esto se define en db / models / index.js, donde se realiza la conexión a la base de datos:
 
 	var env = process.env.NODE_ENV || 'development';
@@ -90,27 +97,27 @@ Editando el archivo ap.js y cambiando el puerto 3000 por cualquier otro
 Las siguientes rutas están configuradas y devolverán datos JSON:
 
 #### Artworks
-+ **GET** all artworks: /api/v1/artworks
-+ **GET** single artwork by id: /api/v1/artworks/{id}
-+ **POST** new artwork: /api/v1/artworks
-+ **PUT** edit a single artwork: /api/v1/artworks/{id}
-+ **DELETE** a single artwork: /api/v1/artworks/{id}
++ **GET** retorna todos los registros de artworks: /api/v1/artworks
++ **GET** retorna un registro de  artwork por id: /api/v1/artworks/{id}
++ **POST** crea un registro de artwork: /api/v1/artworks
++ **PUT** edita un registro de artwork: /api/v1/artworks/{id}
++ **DELETE** borra un registro de artwork: /api/v1/artworks/{id}
 
 
 #### Artists
-+ **GET** all artists: /api/v1/artists
-+ **GET** single artist by id: /api/v1/artists/{id}
-+ **POST** new artist: /api/v1/artists
-+ **PUT** edit a single artist: /api/v1/artists/{id}
-+ **DELETE** a single artist: /api/v1/artists/{id}
++ **GET** retorna todos los registros de artists: /api/v1/artists
++ **GET** retorna un registro de artists por id: /api/v1/artists/{id}
++ **POST** crea un registro de artist: /api/v1/artists
++ **PUT** edita un registro de artist: /api/v1/artists/{id}
++ **DELETE** borra un registro de artist: /api/v1/artists/{id}
 
 
 #### Locations
-+ **GET** all locations: /api/v1/locations
-+ **GET** single location by id: /api/v1/locations/{id}
-+ **POST** new location: /api/v1/locations
-+ **PUT** edit a single location: /api/v1/locations/{id}
-+ **DELETE** a single location: /api/v1/locations/{id}
++ **GET** retorna todos los registros de locations: /api/v1/locations
++ **GET** retorna un registro de location por id: /api/v1/locations/{id}
++ **POST** crea un registro location: /api/v1/locations
++ **PUT** edita un registro de location: /api/v1/locations/{id}
++ **DELETE** borra un registro de location: /api/v1/locations/{id}
 
 La respuesta JSON para artistas y ubicaciones devolverá una lista de sus objetos de arte asociados.
 
@@ -156,8 +163,10 @@ Más información aquí:
 [Creación y ejecución de sembradoras] (http://docs.sequelizejs.com/manual/tutorial/migrations.html#creating-first-seed)
 
 
-## Asociación de modelos y uso de relaciones secuelas
-Podemos definir asociaciones entre nuestros modelos, que Sequelize usará para agregar referencias entre nuestras tablas de base de datos. Esto nos permite incluir fácilmente todos los registros asociados de otras tablas al consultar un registro. Por ejemplo, establecer una relación padre-hijo entre los artistas y sus obras de arte asociadas.
+## Asociación de modelos y uso de relaciones
+Podemos definir asociaciones entre nuestros modelos, que Sequelize usará para agregar referencias entre nuestras tablas de base de datos. 
+Esto nos permite incluir fácilmente todos los registros asociados de otras tablas al consultar un registro.
+Por ejemplo, establecer una relación padre-hijo entre los artistas y sus obras de arte asociadas.
 
 Sequelize nos permite definir esto usando términos naturales. En nuestro ejemplo, un artista '** tieneMuchas () **' obras de arte, y cada obra de arte '** pertenece a () **' a un artista. Estas asociaciones se definen en los archivos del modelo y deben definirse en cada dirección, es decir, tanto en el modelo principal como en el secundario.
 
@@ -165,19 +174,49 @@ Luego, en nuestros métodos GET en los archivos del controlador de ubicación y 
 
 *** Nota: los tutoriales más antiguos pueden indicarle que defina esto en la propiedad 'classMethods' en el objeto modelo. Esto ya no funcionará con Sequelize v4 +, debe definir las asociaciones fuera del objeto del modelo. Más información sobre esto aquí: [Actualizar a V4] (http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html) ***
 
+# Pasos para realizar una liberacion de hospedaje en Heroku
 
-# 1. tener una cuneta de heroku
-# 2. instalar heroku cli
+# 1. Tener una Cuenta de heroku
+https://signup.heroku.com/
+
+# 2. instalar la linea de comandos de heroku (cli)
 https://devcenter.heroku.com/articles/heroku-cli
-# 3. hacer login
+
+# 3. Ingresar al CLI (login)
 heroku login
+
 # 4. Crear archivo Procfile
 echo "web: node app.js" > Procfile
-# 5. Crear el repositorio de heroku
+
+# 5. Crear el repositorio/aplicacion de heroku
 heroku create
-# 6. Hacer el deploy
-git push heroku
-# 7. Abrir la url del deploy
+
+# 6. Crear la base de datos en heroku (addon)
+    heroku addons:create heroku-postgresql:hobby-dev
+
+# 7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
+
+     Por la constante que arroje el comando del .6
+     db/config/config.json
+     en el valor de "use_env_variable" : "DATABASE_URL"
+    Ej:
+    Creating heroku-postgresql:hobby-dev on ⬢ cryptic-temple-48011... free
+    Database has been created and is available
+     ! This database is empty. If upgrading, you can transfer
+     ! data from another database with pg:copy
+    Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
+
+# 8. Realizar una liberacion (deploy)
+    #si no existe la rama master:
+    git checkout -b master
+    git push heroku master
+
+# 9. Ejecutar las migraciones y los semilleros de datos (seeders)
+heroku run bash
+sequelize db:migrate
+
+# 10. Abrir la url del deploy
 heroku open
-# 8. Crear la base de datos en heroku
-heroku addons:create heroku-postgresql:hobby-dev
+
+    Listo !!, para probar las solicitudes de los APIs.
+    Esto se puede hacer atraves de peticiones de una aplicación web o una utileria de solicitudes REST como Postman
