@@ -5,11 +5,13 @@ var bodyParser = require('body-parser');
 var Sequelize = require('sequelize');
 var validator = require('express-validator');
 
-
 //Import controllers which hold the CRUD methods for each model
 var artworksController = require('./db/controllers/artworks');
 var artistsController = require('./db/controllers/artists');
 var locationsController = require('./db/controllers/locations');
+
+//Instantiate app Name and globals
+var appName = "api-crud-orm-sequelize-cors V1.2.1 07-11-2020";
 
 //Instantiate Express
 var app = express();
@@ -18,6 +20,7 @@ var app = express();
 app.use(cors());
 
 //Set up body-parser with JSON
+// https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/
 app.use(bodyParser.json());
 
 //Initialize express-validator to check incoming POST request values.
@@ -33,7 +36,7 @@ var models = require("./db/models");
 //===========================================
 //Basic home route with documentation. Just for presentation, not functional.
 app.get('/', function(req, res, next){
-  res.send('Home Route - nothing to see here yet1 ');
+  res.send(`Home Route - Go to : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a>`);
 });
 
 //API endpoints and CRUD routes. The second arguments are referring to functions defined in the individual controller files.
@@ -85,6 +88,7 @@ app.use(function(err, req, res, next) {
 //Tell node to listen for the App on port 3000:
 // listen on port 3000
 app.listen(process.env.PORT || 3000, function () {
+  console.log(`Running ${appName}`);
   console.log('Express app listening on port 3000');
 })
 

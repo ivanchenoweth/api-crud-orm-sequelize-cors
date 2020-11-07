@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "",
+    "username": "root",
+    "password": "usbw",
     "database": "art-demo",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -19,6 +19,6 @@
     "database": "art-demo",
     "host": "127.0.0.1",
     "dialect" : "postgres",
-    "use_env_variable" : "HEROKU_POSTGRESQL_CRIMSON_URL"
+    "use_env_variable" : "DATABASE_URL"
   }
 }
