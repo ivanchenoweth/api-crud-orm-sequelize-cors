@@ -19,6 +19,6 @@
     "database": "art-demo",
     "host": "127.0.0.1",
     "dialect" : "postgres",
-    "use_env_variable" : "postgresql-sinuous-52106"
+    "use_env_variable" : "DATABASE_URL"
   }
 }
