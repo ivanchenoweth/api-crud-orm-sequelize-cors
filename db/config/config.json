@@ -14,18 +14,13 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "art-demo",
-    "host": "127.0.0.1",
-    "dialect" : "postgres",
-    "protocol": "postgres",
+    "use_env_variable": "DATABASE_URL",
+    "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
-        "require": "true",
-        "rejectUnauthorized": "false"
+         "require": "true",
+         "rejectUnauthorized": "false"
       }
-    },
-    "use_env_variable" : "DATABASE_URL"
+    }
   }
 }
