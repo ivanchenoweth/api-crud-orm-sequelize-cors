@@ -176,50 +176,46 @@ Luego, en nuestros métodos GET en los archivos del controlador de ubicación y 
 
 # Pasos para realizar una liberacion de hospedaje en Heroku
 
-# 1. Tener una Cuenta de heroku
+## 1. Tener una Cuenta de heroku
 https://signup.heroku.com/
 
 # 2. instalar la linea de comandos de heroku (cli)
 https://devcenter.heroku.com/articles/heroku-cli
 
-# 3. Ingresar al CLI (login)
+## 3. Ingresar al CLI (login)
 heroku login
 
-# 4. Crear archivo Procfile
+## 4. Crear archivo Procfile si no existe
 echo "web: node app.js" > Procfile
 
-# 5. Crear el repositorio/aplicacion de heroku
+## 5. Crear el repositorio/aplicacion de heroku
 heroku create
 
-# 6. Crear la base de datos en heroku (addon)
+## 6. Crear la base de datos en heroku (addon)
     heroku addons:create heroku-postgresql:hobby-dev
 
-# 7. Reemplazar la constante HEROKU_POSTGRESQL_CRIMSON_URL:
-
-     Por la constante que arroje el comando del .6
-     db/config/config.json
-     en el valor de "use_env_variable" : "DATABASE_URL"
-    Ej:
-    Creating heroku-postgresql:hobby-dev on ⬢ cryptic-temple-48011... free
-    Database has been created and is available
-     ! This database is empty. If upgrading, you can transfer
-     ! data from another database with pg:copy
-    Created postgresql-slippery-59528 as DATABASE_URL_DIFERENTE
-
-# 8. Realizar una liberacion (deploy)
+## 7. Realizar una liberacion (deploy)
     #si no existe la rama master:
     git checkout -b master
     git push heroku master
 
-# 9. Ejecutar las migraciones y los semilleros de datos (seeders)
+# 8. Ejecutar las migraciones y los semilleros de datos (seeders)
+
 - mostrar las aplicaciones de la cuenta heroku
+
 `heroku apps`
+
 - seleccionar la aplicacion
+
 `heroku git:remote -a api-crud-orm-sequelize-cors`
+
 - ingresar a modo CLI interactivo
+
 `heroku run bash`
-- arrancar la migracion de sequalizq
+
+- ejecutar la migracion de sequalize
+
 `sequelize db:migrate`
 
-# 10. Abrir la url del deploy
+## 10. Abrir la url del deploy
 
