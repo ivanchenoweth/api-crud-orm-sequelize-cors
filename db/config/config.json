@@ -19,11 +19,10 @@
     "database": "art-demo",
     "host": "127.0.0.1",
     "dialect" : "postgres",
-    "dialectOptions": {
-      "ssl": {
-          "require": true,
-          "rejectUnauthorized": false
-      }
+    dialect: 'postgres',
+    protocol: 'postgres',
+    dialectOptions: {
+        ssl: true
     },
     "use_env_variable" : "DATABASE_URL",
     
