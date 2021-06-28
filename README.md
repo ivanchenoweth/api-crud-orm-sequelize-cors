@@ -212,11 +212,14 @@ heroku create
     git push heroku master
 
 # 9. Ejecutar las migraciones y los semilleros de datos (seeders)
-heroku run bash
-sequelize db:migrate
+- mostrar las aplicaciones de la cuenta heroku
+`heroku apps`
+- seleccionar la aplicacion
+`heroku git:remote -a api-crud-orm-sequelize-cors`
+- ingresar a modo CLI interactivo
+`heroku run bash`
+- arrancar la migracion de sequalizq
+`sequelize db:migrate`
 
 # 10. Abrir la url del deploy
-heroku open
 
-    Listo !!, para probar las solicitudes de los APIs.
-    Esto se puede hacer atraves de peticiones de una aplicación web o una utileria de solicitudes REST como Postman
