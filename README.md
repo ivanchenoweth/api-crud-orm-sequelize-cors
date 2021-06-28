@@ -6,6 +6,8 @@ Esta es una API REST simple basada en JSON, construida con Node, Express, Cors, 
 
 Utiliza ubicaciones de artistas, obras de arte y museos como información de muestra.
 
+Solo para propositos educativos. No incluye sistema de logueo.
+
 ## Demo on line
 
 [Demo REST API CRUD Demo lista de tabla de artistas - Heroku ](https://api-crud-orm-sequelize-cors.herokuapp.com/api/v1/artists)
