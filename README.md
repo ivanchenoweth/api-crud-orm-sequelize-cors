@@ -199,7 +199,7 @@ heroku create
     git checkout -b master
     git push heroku master
 
-# 8. Ejecutar las migraciones y los semilleros de datos (seeders)
+## 8. Ejecutar las migraciones y los semilleros de datos (seeders)
 
 - mostrar las aplicaciones de la cuenta heroku
 
@@ -217,5 +217,7 @@ heroku create
 
 `sequelize db:migrate`
 
-## 10. Abrir la url del deploy
+## Listo para operar
+
+
 
