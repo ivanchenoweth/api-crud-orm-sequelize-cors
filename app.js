@@ -11,7 +11,7 @@ var artistsController = require('./db/controllers/artists');
 var locationsController = require('./db/controllers/locations');
 
 //Instantiate app Name and globals
-var appName = "api-crud-orm-sequelize-cors deploy1->stg V1.2.1 07-11-2020";
+var appName = "api-crud-orm-sequelize-cors deploy1->stg V1.2.2 01-23-2021";
 
 //Instantiate Express
 var app = express();
@@ -36,7 +36,7 @@ var models = require("./db/models");
 //===========================================
 //Basic home route with documentation. Just for presentation, not functional.
 app.get('/', function(req, res, next){
-  res.send(`Home Route - Go to : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a>`);
+  res.send(`Home Route - Go to github : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a>`);
 });
 
 //API endpoints and CRUD routes. The second arguments are referring to functions defined in the individual controller files.
