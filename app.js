@@ -9,6 +9,7 @@ var validator = require('express-validator');
 var artworksController = require('./db/controllers/artworks');
 var artistsController = require('./db/controllers/artists');
 var locationsController = require('./db/controllers/locations');
+var tutorialsController = require('./db/controllers/tutorials');
 
 //Instantiate app Name and globals
 var appName = "api-crud-orm-sequelize-cors deploy1->stg V1.2.2 01-23-2021";
@@ -36,7 +37,10 @@ var models = require("./db/models");
 //===========================================
 //Basic home route with documentation. Just for presentation, not functional.
 app.get('/', function(req, res, next){
-  res.send(`Home Route - Go to github : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a>`);
+  let ret = `<p>Home Route - Go to github1 : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a></p>`;
+  ret = ret+`<p>Home Route - Endpoint2 : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a></p>`;
+  res.send(ret);
+  //res.send(`Home Route - Endpoint : <a href=https://github.com/ivanchenoweth/api-crud-orm-sequelize-cors target="_blank"> ${appName}<a>`);
 });
 
 //API endpoints and CRUD routes. The second arguments are referring to functions defined in the individual controller files.
@@ -62,6 +66,13 @@ app.get('/api/v1/locations/:id', locationsController.fetchOne);
 app.post('/api/v1/locations/', locationsController.create);
 app.put('/api/v1/locations/:id', locationsController.update);
 app.delete('/api/v1/locations/:id', locationsController.delete);
+
+//Tutorials CRUD routes.
+app.get('/api/v1/tutorials', tutorialsController.fetchAll);
+app.get('/api/v1/tutorials/:id', tutorialsController.fetchOne);
+app.post('/api/v1/tutorials/', tutorialsController.create);
+app.put('/api/v1/tutorials/:id', tutorialsController.update);
+app.delete('/api/v1/tutorials/:id', tutorialsController.delete);
 
 //===========================================
 // End of Route Handlers
